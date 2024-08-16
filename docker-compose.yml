@@ -1,0 +1,17 @@
+version: '3' # Especifica a versão do docker-compose
+
+services: # Lista de serviços que serão executados
+  postgres: # Serviço do banco de dados
+    image: postgres:latest
+    environment: 
+      POSTGRES_DB: seg4u
+      POSTGRES_USER: seg4u
+      POSTGRES_PASSWORD: seg4u2024FaGG
+      TZ: America/Sao_Paulo
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes: # Lista de volumes que serão criados
+  postgres-data:
